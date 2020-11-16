@@ -1,0 +1,15 @@
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  background-color: gray;
+
+}
+.contents_post {
+  margin-top: 40px;
+  width: 400px;
+  height: 400px;
+  background-color: greenyellow;
+}
+
