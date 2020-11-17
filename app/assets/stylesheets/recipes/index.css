@@ -11,5 +11,7 @@
   width: 400px;
   height: 400px;
   background-color: greenyellow;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  box-sizing: border-box;
 }
 
