@@ -1,0 +1,160 @@
+<div class="recipes-contents">
+  <header class="recipes-header">
+    <%= link_to image_tag('furima-logo-color.png',size: '200x55'), "/" %>
+  </header>
+  <div class="recipes-main">
+    <h2 class="recipes-title">レシピ編集</h2>
+    <%= form_with(model:@recipe_form, url: recipe_path, local: true) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="recipes-center">
+        <div class="recipes-left">
+          <div class="img-upload">
+            <div class="weight-bold-text recipe-text">
+              完成写真
+              <span class="indispensable">必須</span>
+            </div>
+            <div class="click-upload">
+              <p>
+                クリックしてファイルをアップロード
+              </p>
+            </div>
+            <div id="image-lists">
+              <div id= "image-list1">
+                <%= f.file_field :image, id: "recipe-image" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="new-recipes">
+            <div class="weight-bold-text recipe-text">
+              レシピ名
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :title, class:"recipes-text", id:"recipe-name", placeholder:"レシピ名（必須 20文字まで)", maxlength:"20" %>
+            <div class="recipes-explain">
+              <div class="weight-bold-text recipe-text">
+                商品の説明
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.text_area :info, class:"recipes-info", id:"recipe-info", placeholder:"レシピの説明（必須 1,000文字まで）例）ポカポカお鍋です" ,rows:"7" ,maxlength:"1000" %>
+            </div>
+          </div>
+
+          <div class="recipes-detail">
+            <div class="recipe-form">
+              <div class="category-form">
+                <div class="weight-bold-text recipe-text">
+                  カテゴリー
+                  <span class="indispensable">必須</span>
+                </div>
+                <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"recipe-category"}) %>
+              </div>
+              <div class="ingredient-form">
+                <div class="weight-bold-text recipe-text">
+                  人数
+                  <span class="indispensable">必須</span>
+                </div>
+                <%= f.collection_select(:serving_id, Serving.all, :id, :name, {}, {class:"select-box", id:"recipe-sales-status"}) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="recipes-right">
+          <div class="ingredient-content">
+            <div class="weight-bold-text recipe-text">
+              材料と分量
+              <span class="indispensable">必須</span>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">①</span><%= f.text_area :ingredient1, class:"ingredient-text", placeholder:"例)ひき肉 100グラム", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">②</span><%= f.text_area :ingredient2, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">③</span><%= f.text_area :ingredient3, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">④</span><%= f.text_area :ingredient4, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑤</span><%= f.text_area :ingredient5, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑥</span><%= f.text_area :ingredient6, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑦</span><%= f.text_area :ingredient7, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑧</span><%= f.text_area :ingredient8, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑨</span><%= f.text_area :ingredient9, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑩</span><%= f.text_area :ingredient10,  class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑪</span><%= f.text_area :ingredient11,  class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑫</span><%= f.text_area :ingredient12, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑬</span><%= f.text_area :ingredient13, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑭</span><%= f.text_area :ingredient14, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+            <div class="ingredient">
+              <span class="marunumber">⑮</span><%= f.text_area :ingredient15, class:"ingredient-text", placeholder:"", maxlength:"10" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recipes-footer">
+        <div class="weight-bold-text recipe-text">
+            作り方
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="recipe-steps">
+          <div class="step">
+            <span class="marunumber">①</span><%= f.text_area :step1, placeholder:"例)肉を焼く", class:"step-text", maxlength:"40" %>
+          </div>
+          <div class="step">
+            <span class="marunumber">②</span><%= f.text_area :step2, placeholder:"例)塩かける", class:"step-text", maxlength:"40" %>
+          </div>
+          <div class="step">
+            <span class="marunumber">③</span><%= f.text_area :step3, class:"step-text", maxlength:"40" %>
+          </div>
+          <div class="step">
+            <span class="marunumber">④</span><%= f.text_area :step4, class:"step-text", maxlength:"40" %>
+          </div>
+          <div class="step">
+            <span class="marunumber">⑤</span><%= f.text_area :step5, class:"step-text", maxlength:"40" %>
+          </div>
+          <div class="step">
+            <span class="marunumber">⑥</span><%= f.text_area :step6, class:"step-text", maxlength:"40" %>
+          </div>
+          <div class="step">
+            <span class="marunumber">⑦</span><%= f.text_area :step7, class:"step-text", maxlength:"40" %>
+          </div>
+          <div class="step">
+            <span class="marunumber">⑧</span><%= f.text_area :step8, class:"step-text", maxlength:"40" %>
+          </div>
+          <div class="step">
+            <span class="marunumber">⑨</span><%= f.text_area :step9, class:"step-text", maxlength:"40" %>
+          </div>
+          <div class="step">
+            <span class="marunumber">⑩</span><%= f.text_area :step10, class:"step-text", maxlength:"40" %>
+          </div>
+        </div>
+        <div class="post-btn-contents">
+          <%= f.submit "投稿する" ,class:"post-btn" %>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<%= render  "shared/second_header" %>
+<div class="recipe-contents show">
+  <div class="recipe-show-left">
+    <h3 class="recipe-show-title">
+      <%= @recipe.title %>
+    </h3>
+    <div class="recipe-show-base">
+      <div class="recipe-show-image">
+      　　<%= image_tag(@recipe.image) if @recipe.image.attached? %>
+      </div>
+      <div class="recipe-show-info">
+        <%= @recipe.info %><br>
+        <p><span class="by">by</span><%= @recipe.user.nickname%></p>
+      </div>
+      <div class="recipe-show-detail">
+        <%# <div class="recipe-show-serving">
+          <%= @recipe.serving.name %>
+        <%# </div> %>
+      </div>
+    </div>
+    <div class="recipe-show-ingredients">
+      <h3 class="recipe-show-serving">材料<%= @recipe.serving.name %></h3>
+      <%# <%= @recipe.ingredient.attributes.each do |attr_name, value| %>
+      <ul class="show-ingredient">
+        <%# <%= @ingredients.each do |ingredient|  %>
+        <% if @ingredients[0].present?%> <li><span>①</span><%= @ingredients[0] %></li><% end %>
+        <% if @ingredients[1].present?%> <li><span>②</span><%= @ingredients[1] %></li><% end %>
+        <% if @ingredients[2].present?%> <li><span>③</span><%= @ingredients[2] %></li><% end %>
+        <% if @ingredients[3].present?%> <li><span>④</span><%= @ingredients[3] %></li><% end %>
+        <% if @ingredients[4].present?%> <li><span>⑤</span><%= @ingredients[4] %></li><% end %>
+        <% if @ingredients[5].present?%> <li><span>⑥</span><%= @ingredients[5] %></li><% end %>
+        <% if @ingredients[6].present?%> <li><span>⑦</span><%= @ingredients[6] %></li><% end %>
+        <% if @ingredients[7].present?%> <li><span>⑧</span><%= @ingredients[7] %></li><% end %>
+        <% if @ingredients[8].present?%> <li><span>⑨</span><%= @ingredients[8] %></li><% end %>
+        <% if @ingredients[9].present?%> <li><span>⑩</span><%= @ingredients[9] %></li><% end %>
+        <% if @ingredients[10].present?%><li> <span>⑪</span><%= @ingredients[10] %></li><% end %>
+        <% if @ingredients[11].present?%><li> <span>⑫</span><%= @ingredients[11] %></li><% end %>
+        <% if @ingredients[12].present?%><li> <span>⑬</span><%= @ingredients[12] %></li><% end %>
+        <% if @ingredients[13].present?%><li> <span>⑭</span><%= @ingredients[13] %></li><% end %>
+        <% if @ingredients[14].present?%><li> <span>⑮</span><%= @ingredients[14] %></li><% end %>
+        <%# <% end %>
+      </ul>
+    </div>
+    <div class="recipe-show-steps">
+      <h3>★作り方★</h3>
+      <ul class="show-step">
+        <% if @steps[0].present?%> <li><span>①</span><%= @steps[0] %></li><% end %>
+        <% if @steps[1].present?%> <li><span>②</span><%= @steps[1] %></li><% end %>
+        <% if @steps[2].present?%> <li><span>③</span><%= @steps[2] %></li><% end %>
+        <% if @steps[3].present?%> <li><span>④</span><%= @steps[3] %></li><% end %>
+        <% if @steps[4].present?%> <li><span>⑤</span><%= @steps[4] %></li><% end %>
+        <% if @steps[5].present?%> <li><span>⑥</span><%= @steps[5] %></li><% end %>
+        <% if @steps[6].present?%> <li><span>⑦</span><%= @steps[6] %></li><% end %>
+        <% if @steps[7].present?%> <li><span>⑧</span><%= @steps[7] %></li><% end %>
+        <% if @steps[8].present?%> <li><span>⑨</span><%= @steps[8] %></li><% end %>
+        <% if @steps[9].present?%> <li><span>⑩</span><%= @steps[9] %></li><% end %>
+      </ul>
+    </div>
+    <div class="recipe-show-header">
+      <% if user_signed_in? && @recipe.user_id == current_user.id %>
+        <div class="recipe-edit">
+          <%= link_to '商品の編集', edit_recipe_path(@recipe.id), method: :get, class: "recipe-red-btn" %>
+        </div>
+        <div class="recipe-destroy">
+          <%= link_to '削除', recipe_path(@recipe.id), method: :delete, class:'recipe-grey-btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="recipe-show-right">
+  </div>
+</div>
