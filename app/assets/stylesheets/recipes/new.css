@@ -1,0 +1,173 @@
+.recipes-header {
+  width: 185px;
+  margin: 50px auto;
+}
+/* .recipes-contents {
+
+} */
+.recipes-main {
+  width: 85%;
+  margin: 0 auto 50px auto;
+  /* border: 2px solid black ; */
+  padding: 30px;
+  background-color: rgb(241, 237, 237);
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  box-sizing: border-box;
+}
+.recipes-title {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  color: #202020;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.recipe-text {
+  margin: 15px 0;
+  text-align: center;
+}
+.recipes-center {
+  display: flex;
+}
+.recipes-left {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+.img-upload {
+  margin: 0 auto;
+}
+
+.new-recipes {
+  margin: 0 auto;
+  width: 80%;
+}
+.recipes-text {
+  width: 100%;
+  margin-top: 5px;
+  height: 40px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  resize: none;
+}
+
+.recipes-info {
+  width: 100%;
+  margin-top: 5px;
+  height: 150px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  resize: none;
+}
+.recipes-detail {
+  width: 80%;
+  margin: 0 auto;
+}
+.recipe-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.category-form {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.ingredient-form {
+  width: 45%;
+  margin: 0 auto;
+}
+.select-box {
+  width: 100%;
+  margin: 0 auto;
+  height: 30px;
+}
+
+/* 右 */
+
+.recipes-right {
+  width: 55%;
+}
+
+.ingredient-content {
+  width: 90%;
+  margin: 0 auto;
+}
+.ingredient-text {
+  width: 80%;
+  height: 35px;
+  margin-top: 5px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  resize: none;
+  font-size: 13px;
+}
+.marunumber {
+  font-size: 20px;
+  margin-right: 10px;
+  vertical-align: 10px;
+}
+.recipes-footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.recipe-steps {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.step {
+  margin: 0 auto;
+  width: 80%;
+}
+.step-text {
+  width: 90%;
+  height: 35px;
+  margin-top: 5px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  resize: none;
+  font-size: 13px;
+}
+.post-btn-contents {
+  display: flex;
+  flex-direction: column;
+}
+.post-btn {
+  margin: 30px auto;
+  width: 50%;
+  height: 40px;
+  background-color: lightcoral;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+.post-btn:hover {
+  cursor: pointer;
+  background-color: rgb(240, 158, 158);
+}
+.back-btn {
+  margin: 0 auto;
+  width: 30%;
+  padding: 10px 0;
+  background-color: gray;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  color: rgb(241, 237, 237);
+  vertical-align: middle;
+}
+
