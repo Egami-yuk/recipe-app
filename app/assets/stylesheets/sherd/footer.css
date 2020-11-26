@@ -1,0 +1,22 @@
+footer {
+  width: 100%;
+  height: 250px;
+  background-color: #f7f3e8;
+  
+}
+.footer-contents {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.footer-contents  p {
+  color: #401c00;
+}
+.footer-contents li {
+  padding-top: 15px;
+}
+.footer-contents a {
+  color: #755353;
+}

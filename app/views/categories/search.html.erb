@@ -1,7 +1,9 @@
-<%= render "shared/header" %>
+<%= render  "shared/second_header" %>
 <div class="recipe-contents">
   <div class="recipe-left">
-    <h2 class='title'><%= params[:keyword] %>のレシピ一覧</h2>
+  <% if @recipes.present? %>
+    <h2 class='title'><%= @recipes[0].category.name %>料理のレシピ一覧</h2>
+   <% end %>
     <ul class="recipe-lists">
       <% if @recipes.present? %>
         <% @recipes.each do |recipe| %>
@@ -23,7 +25,7 @@
           </li>
         <% end %>
       <%else%>
-      <h2 class='title'><%= params[:keyword] %>のレシピはまだありません</h2>
+        <h2 class='title'>お探しのレシピはまだありません</h2>
       <% end %>
     </ul>
   </div>

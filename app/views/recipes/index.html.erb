@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <div class="recipe-contents">
   <div class="recipe-left">
-    <h2 class='title'>レシピ一覧</h2>
+    <h2 class='title'>新着レシピ一覧</h2>
     <ul class="recipe-lists">
       <% if @recipes.present? %>
         <% @recipes.each do |recipe| %>
@@ -16,9 +16,11 @@
               <h3 class='recipe-title'>
                 <%= recipe.title %>
               </h3>
-              <h3 class="recipe-user">
-                <span class="by">by</span><%= link_to user_path(recipe.user.id) do %><%= recipe.user.nickname %><% end %>
-              </h3>
+              <div class="recipe-bottom">
+                <h3 class="recipe-user">
+                  <span class="by">by</span><%= link_to user_path(recipe.user.id) do %><%= recipe.user.nickname %><% end %>
+                </h3>
+              </div>
             </div>
           </li>
         <% end %>
@@ -29,7 +31,25 @@
     <div class="right-top">
       <%= link_to 'レシピを作成する', new_recipe_path, class: "new-btn" %>
     </div>
-    <div class="favorite">
+    <div class="ranking">
+    　<h3>人気のレシピ</h3>
+      <ul class="franking-recipes">
+        <% if @ranking.present? %>
+          <% @ranking.each do |ranking| %>
+            <li class="ranking-list">
+              <%= link_to recipe_path(ranking.id) do %>
+                <div class="ranking-img">
+                  <%= image_tag(ranking.image) if ranking.image.attached? %>
+                </div>
+                <h3 class='ranking-title'>
+                  <%= ranking.title %>
+                </h3>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
+<%= render  "shared/footer" %>

@@ -4,13 +4,26 @@
     <h3 class="recipe-show-title">
       <%= @recipe.title %>
     </h3>
+    <div class="favorite">
+      <% if user_signed_in? %>
+        <% if @recipe.user_id != current_user.id %>
+          <% if !Favorite.exists?(user_id:current_user.id,recipe_id:@recipe.id) %>
+            <%= link_to "❤︎",recipe_favorites_path(@recipe.id), class: "favorite-button", method: :post %>
+          <% else %>
+            <%= link_to "❤︎",recipe_favorites_path(@recipe.id), class: "favorite-button", id: "favorite-destroy", method: :delete %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to "❤︎",new_user_session_path, class: "favorite-button" %>
+      <% end %>
+    </div>
     <div class="recipe-show-base">
       <div class="recipe-show-image">
       　　<%= image_tag(@recipe.image) if @recipe.image.attached? %>
       </div>
       <div class="recipe-show-info">
         <%= @recipe.info %><br>
-        <p><span class="by">by</span><%= @recipe.user.nickname%></p>
+        <p><span class="by">by<%= link_to @recipe.user.nickname, user_path(@recipe.user_id)%></span></p>
       </div>
       <div class="recipe-show-detail">
         <%# <div class="recipe-show-serving">
@@ -68,5 +81,27 @@
     </div>
   </div>
   <div class="recipe-show-right">
+  　<div class="right-top">
+      <%= link_to 'レシピを作成する', new_recipe_path, class: "new-btn" %>
+    </div>
+    <div class="ranking">
+    　<h3>人気のレシピ</h3>
+      <ul class="franking-recipes">
+        <% if @ranking.present? %>
+          <% @ranking.each do |ranking| %>
+            <li class="ranking-list">
+              <%= link_to recipe_path(ranking.id) do %>
+                <div class="ranking-img">
+                  <%= image_tag(ranking.image) if ranking.image.attached? %>
+                </div>
+                <h3 class='ranking-title'>
+                  <%= ranking.title %>
+                </h3>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
