@@ -4,13 +4,17 @@ class RecipesController < ApplicationController
 
 
   def index
-    @recipes = Recipe.includes(:user).order("created_at DESC")
+    
+    @recipes = Recipe.includes(:user, :favorites).order("created_at DESC").limit(6)
+    # @favorites = Favorite.all
+    # binding.pry
+    @ranking = Recipe.find(Favorite.group(:recipe_id).order('count(recipe_id) desc').limit(3).pluck(:recipe_id))
   end
-
+  
   def new
     @recipe_form = RecipeForm.new
   end
-
+  
   def create
     @recipe_form = RecipeForm.new(recipe_params)
     if @recipe_form.valid?
@@ -22,6 +26,7 @@ class RecipesController < ApplicationController
   end
   
   def show
+    @ranking = Recipe.find(Favorite.group(:recipe_id).order('count(recipe_id) desc').limit(3).pluck(:recipe_id))
   end
   
   def edit
@@ -38,7 +43,7 @@ class RecipesController < ApplicationController
     # @recipe_form = Recipe.new(recipe)
     # @ingredient = Ingredient.new(ingredient)
     # @recipe_step = RecipeStep.new(recipe_step)
-
+    
     if @recipe_form.valid?  @ingredient.valid? && @recipe_step.valid?
       @recipe_form.update(recipe)
       @ingredient.update(ingredient)
@@ -48,18 +53,16 @@ class RecipesController < ApplicationController
       render :edit
     end
   end
-
+  
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to root_path
   end
-
+  
   def search
+    @ranking = Recipe.find(Favorite.group(:recipe_id).order('count(recipe_id) desc').limit(3).pluck(:recipe_id))
     @recipes = Recipe.search(params[:keyword])
-    if @recipes.present?
-      redirect_to root_path
-    end
   end
 
   private 
@@ -100,6 +103,7 @@ class RecipesController < ApplicationController
   end
   def set_recipe
     @recipe = Recipe.find(params[:id])
+    # @user = @recipe.user_id
     @ingredient = Ingredient.find_by(recipe_id: @recipe.id)
     @recipe_step = RecipeStep.find_by(recipe_id: @recipe.id)
   end
@@ -112,5 +116,6 @@ class RecipesController < ApplicationController
   def ingredient
     params.require(:recipe_form).permit(:ingredient1, :ingredient2, :ingredient3, :ingredient4, :ingredient5, :ingredient6, :ingredient7, :ingredient8, :ingredient9, :ingredient10, :ingredient11, :ingredient12, :ingredient13, :ingredient14, :ingredient15)
   end
+
 
 end

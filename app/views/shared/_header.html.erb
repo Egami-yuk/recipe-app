@@ -10,12 +10,25 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+      <li id ="category">カテゴリー
+        <ul id="category-lists">
+          <li><%= link_to 'お肉', categories_search_path(category_id: 2), class: "category-content" %></li>
+          <li><%= link_to 'お魚', categories_search_path(category_id: 3), class: "category-content" %></li>
+          <li><%= link_to 'お野菜', categories_search_path(category_id: 4), class: "category-content" %></li>
+          <li><%= link_to 'ご飯もの', categories_search_path(category_id: 5), class: "category-content" %></li>
+          <li><%= link_to 'スープ', categories_search_path(category_id: 6), class: "category-content" %></li>
+          <li><%= link_to '麺類', categories_search_path(category_id: 7), class: "category-content" %></li>
+          <li><%= link_to 'お鍋', categories_search_path(category_id: 8), class: "category-content" %></li>
+          <li><%= link_to '揚げ物', categories_search_path(category_id: 9), class: "category-content" %></li>
+          <li><%= link_to 'デザート', categories_search_path(category_id: 10), class: "category-content" %></li>
+          <li><%= link_to 'その他', categories_search_path(category_id: 11), class: "category-content" %></li>
+        </ul>
+      </li>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
-         <li><%= link_to  current_user.nickname, "#", class: "nickname" %></li>
+         <li><%= link_to  current_user.nickname, user_path(current_user.id), class: "nickname" %></li>
          <li><%= link_to 'ログアウト',destroy_user_session_path,  method: :delete, class: "logout" %></li>
        <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>

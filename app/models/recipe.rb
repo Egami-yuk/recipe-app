@@ -4,10 +4,10 @@ class Recipe < ApplicationRecord
   belongs_to_active_hash :serving
   has_one :ingredient, dependent: :destroy
   has_one :recipe_step, dependent: :destroy
-
   has_one_attached :image
-
   belongs_to :user
+
+  has_many :favorites, dependent: :destroy
 
   validates :title,       presence: { message: '料理名を入力してください' }
   validates :info,        presence: { message: '説明文を入力してください' }
@@ -18,8 +18,7 @@ class Recipe < ApplicationRecord
   def self.search(search)
     if search != ""
       @search = Recipe.where('title LIKE(?)', "%#{search}%")
-    else
-      Recipe.new
+      # @search = Recipe.where('info LIKE(?)', "%#{search}%")
     end
   end
 end

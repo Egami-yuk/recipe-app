@@ -1,0 +1,16 @@
+.user-recipe-show {
+  width: 100%;
+}
+.title-user {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 30px;
+
+}
+.user-recipe-lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+.user-recipe-lists > li {
+  width: 30%;
+}
