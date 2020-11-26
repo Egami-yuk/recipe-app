@@ -1,56 +1,52 @@
 <%= render  "shared/second_header" %>
 <div class="recipe-contents">
   <% if current_user.id == @user.id %>
-    <div class="recipe-left">
-      <h2 class='title'><%= @user.nickname %>さんの投稿レシピ一覧</h2>
-      <ul class="recipe-lists">
-      <% if @recipes.present? %>
-        <% @recipes.each do |recipe| %>
-            <li class="recipe-list">
+    <div class="user-recipe-left">
+      <h2>あなたのレシピ一覧</h2>
+      <ul class="user-recipe-lists">
+        <% if @recipes.present? %>
+          <% @recipes.each do |recipe| %>
+            <li class="user-recipe-list">
               <%= link_to recipe_path(recipe.id) do %>
-                  <div class='recipe-img-content'>
-                    <%= image_tag(recipe.image) if recipe.image.attached? %>
-                  </div>
-                  <div class='recipe-info'>
-                    <h3 class='recipe-title'>
-                      <%= recipe.title %>
-                    </h3>
-                    <h3 class="recipe-user">
-                      <span class="by">by</span><%= recipe.user.nickname %>
-                    </h3>
-                  </div>
-              <% end %>
-            </li>
-        <% end %>
-      <% else %>
-        <h2 class='title'><%= @user.nickname %>さんのレシピの投稿はまだありません</h2>
-      <% end %>
-      </ul>
-    </div>
-    <div class="recipe-right">
-    <div class="right-top">
-      <%= link_to 'レシピを作成する', new_recipe_path, class: "new-btn" %>
-    </div>
-    <div class="ranking">
-    　<h3>お気に入りのレシピ</h3>
-      <ul class="franking-recipes">
-        <% if @favorite.present? %>
-          <% @favorite.each do |favorite| %>
-            <li class="ranking-list">
-              <%= link_to recipe_path(favorite.recipe.id) do %>
-                <div class="ranking-img">
-                  <%= image_tag(favorite.recipe.image) if favorite.recipe.image.attached? %>
+                <div class='user-recipe-img'>
+                  <%= image_tag(recipe.image) if recipe.image.attached? %>
                 </div>
-                <h3 class='ranking-title'>
-                  <%= favorite.recipe.title %>
-                </h3>
+                <div class='user-recipe-info'>
+                  <h3 class='user-recipe-title'>
+                    <%= recipe.title %>
+                  </h3>
+                </div>
               <% end %>
             </li>
           <% end %>
+        <% else %>
+          <h2><%= @user.nickname %>のレシピはまだありません</h2>
         <% end %>
       </ul>
     </div>
-  </div>
+    <div class="user-recipe-left">
+      <h2>お気に入りのレシピ</h2>
+      <ul class="user-recipe-lists">
+        <% if @favorite.present? %>
+          <% @favorite.each do |favorite| %>
+            <li class="user-recipe-list">
+              <%= link_to recipe_path(favorite.recipe.id) do %>
+                <div class='user-recipe-img'>
+                  <%= image_tag(favorite.recipe.image) if favorite.recipe.image.attached? %>
+                </div>
+                <div class='user-recipe-info'>
+                  <h3 class='user-recipe-title'>
+                    <%= favorite.recipe.title %>
+                  </h3>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        <% else %>
+          <h2><%= @user.nickname %>のレシピはまだありません</h2>
+        <% end %>
+      </ul>
+    </div>
   <% else %>
     <div class="user-recipe-show">
       <h2 class='title-user'><%= @user.nickname %>さんの投稿レシピ一覧</h2>
@@ -100,5 +96,5 @@
       </ul>
     </div>
   <% end %>
-  
 </div>
+<%= render  "shared/footer" %>
