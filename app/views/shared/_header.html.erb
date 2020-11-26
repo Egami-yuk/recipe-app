@@ -1,6 +1,6 @@
 <header class='top-page-header'>
   <div class='search-bar-contents'>
-    <%= link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
+    <h2 class="top-title"> 簡単レシピ</h3>
     <%= form_with(url: search_recipes_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "キーワードから探す", class: "input-box" %>
       <%= button_tag class: "search-button", type: :submit  do %>
@@ -24,7 +24,6 @@
           <li><%= link_to 'その他', categories_search_path(category_id: 11), class: "category-content" %></li>
         </ul>
       </li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>

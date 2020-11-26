@@ -15,7 +15,15 @@
   justify-content: space-between;
   align-items: center;
 }
+.top-title {
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","ヒラギノ角ゴ Pro W3","HG丸ｺﾞｼｯｸM-PRO";
+  font-size: 30px;
+  width: 200px;
+  padding-right: 30px;
+  font-weight: bold;
+  color: orange;
 
+}
 .furima-icon {
   width: 10vw;
   margin-right: 10vw;
