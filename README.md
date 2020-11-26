@@ -1,15 +1,29 @@
 # アプリケーション名
 簡単レシピ
+
 # アプリケーション概要
+ユーザー登録・ログイン・ログアウト・レシピ投稿・編集・削除・検索・他ユーザーのレシピをお気に入り
+
 # URL
+https://recipe-app31090.herokuapp.com/
+
 # テスト用アカウント
+basic認証　ユーザー admin パスワード 2222
+テストアカウント email a@aaa.com password aaaaaa1
+
 # 利用方法
+いろいろなレシピを閲覧し探したいレシピを検索したりお気に入りにしたり、また自分のレシピを投稿・編集・削除ができるアプリケーションです
+
 # 目指した課題解決
+この簡単レシピを通して普段料理をしない人が作れる
+
 # 洗い出した要件
-# 実装した機能についてのGIFと説明
+https://docs.google.com/spreadsheets/d/1-PIIWCsXr-FctRb8_WmyRW3MQGfRz6ynpJoQrFLWkrA/edit#gid=282075926
+
 # 実装予定の機能
-# データベース設計
+
 # ローカルでの動作方法
+
 
 # README
 
