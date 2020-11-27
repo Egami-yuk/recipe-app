@@ -1,7 +1,5 @@
 <div class="recipes-contents">
-  <header class="recipes-header">
-    <%= link_to image_tag('furima-logo-color.png',size: '200x55'), "/" %>
-  </header>
+<%= render  "shared/second_header" %>
   <div class="recipes-main">
     <h2 class="recipes-title">レシピ編集</h2>
     <%= form_with(model:@recipe_form, url: recipe_path, local: true) do |f| %>
