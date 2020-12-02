@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   before_action :move_to_index, only: [:edit]
 
   def index
-    @recipes = Recipe.includes(:user, :favorites).order("created_at DESC").limit(6)
+    @recipes = Recipe.includes(:user, :favorites).order("created_at DESC").page(params[:page]).per(6)
     @ranking = Recipe.find(Favorite.group(:recipe_id).order('count(recipe_id) desc').limit(3).pluck(:recipe_id))
   end
   

@@ -76,25 +76,6 @@
     </div>
       </ul>
     </div>
-    <div class="ranking">
-    　<h3>人気のレシピ</h3>
-      <ul class="franking-recipes">
-        <% if @ranking.present? %>
-          <% @ranking.each do |ranking| %>
-            <li class="ranking-list">
-              <%= link_to recipe_path(ranking.id) do %>
-                <div class="ranking-img">
-                  <%= image_tag(ranking.image) if ranking.image.attached? %>
-                </div>
-                <h3 class='ranking-title'>
-                  <%= ranking.title %>
-                </h3>
-              <% end %>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-    </div>
   <% end %>
 </div>
 <%= render  "shared/footer" %>

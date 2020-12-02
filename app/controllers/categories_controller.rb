@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
       @recipes = Recipe.includes(:user).order("created_at DESC")
       render template: "recipes/index"
     else
-      @recipes = Recipe.where(category_id: params[:category_id])
+      @recipes = Recipe.where(category_id: params[:category_id]).page(params[:page]).per(6)
     end
   end
 

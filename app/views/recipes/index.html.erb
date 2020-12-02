@@ -26,6 +26,7 @@
         <% end %>
       <% end %>
     </ul>
+    <%= paginate @recipes, class: "pagination"%>
   </div>
   <div class="recipe-right">
     <div class="right-top">
@@ -52,4 +53,5 @@
     </div>
   </div>
 </div>
+
 <%= render  "shared/footer" %>

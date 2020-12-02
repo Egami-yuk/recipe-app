@@ -1,0 +1,14 @@
+.pagination {
+  border: none;     
+  color: #696969;
+  text-align: center;
+  margin-top: 40px;
+}
+.pagination span a {          
+  color: #696969;   
+}
+
+.current {     
+  /* background: #93c9ff;     */
+  text-align: center;
+}
