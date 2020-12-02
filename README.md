@@ -8,7 +8,7 @@
 https://recipe-app31090.herokuapp.com/
 
 # テスト用アカウント
-basic認証　ユーザー admin パスワード 2222
+basic認証 ユーザー admin パスワード 2222
 テストアカウント email a@aaa.com password aaaaaa1
 
 # 利用方法
@@ -112,3 +112,7 @@ https://docs.google.com/spreadsheets/d/1-PIIWCsXr-FctRb8_WmyRW3MQGfRz6ynpJoQrFLW
 | user     | references | null: false, foreign_key: true |
 | recipe   | references | null: false, foreign_key: true |
 
+### Association
+
+- belongs_to :user
+- belongs_to :recipe
