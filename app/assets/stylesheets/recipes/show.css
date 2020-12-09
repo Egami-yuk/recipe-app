@@ -16,7 +16,7 @@
   font-size: 35px;
   color: rgb(255,99,71);
 }
-.favorite {
+#favorite {
   width: 5%;
 }
 .favorite-button {
