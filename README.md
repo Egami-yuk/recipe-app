@@ -9,7 +9,7 @@ https://recipe-app31090.herokuapp.com/
 
 # テスト用アカウント
 basic認証 ユーザー admin パスワード 2222
-テストアカウント email a@aaa.com password aaaaaa1
+テストアカウント email aaa@aaa.com password aaaaaa1
 
 # 利用方法
 いろいろなレシピを閲覧し探したいレシピを検索したりお気に入りにしたり、また自分のレシピを投稿・編集・削除ができるアプリケーションです
