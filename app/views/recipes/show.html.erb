@@ -4,22 +4,12 @@
     <h3 class="recipe-show-title">
       <%= @recipe.title %>
     </h3>
-    <div class="favorite">
-      <% if user_signed_in? %>
-        <% if @recipe.user_id != current_user.id %>
-          <% if !Favorite.exists?(user_id:current_user.id,recipe_id:@recipe.id) %>
-            <%= link_to "❤︎",recipe_favorites_path(@recipe.id), class: "favorite-button", method: :post %>
-          <% else %>
-            <%= link_to "❤︎",recipe_favorites_path(@recipe.id), class: "favorite-button", id: "favorite-destroy", method: :delete %>
-          <% end %>
-        <% end %>
-      <% else %>
-        <%= link_to "❤︎",new_user_session_path, class: "favorite-button" %>
-      <% end %>
+    <div id="favorite">
+      <%= render 'favorite', recipe: @recipe %>
     </div>
     <div class="recipe-show-base">
       <div class="recipe-show-image">
-      　　<%= image_tag(@recipe.image) if @recipe.image.attached? %>
+        <%= image_tag(@recipe.image) if @recipe.image.attached? %>
       </div>
       <div class="recipe-show-info">
         <%= @recipe.info %><br>

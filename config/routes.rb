@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'search'
     end
     resource :favorites, only: [:create, :destroy]
+    get '/favorites/:id', to: 'favorites#checked'
   end
   get :only, 'categories/search'
   resources :users, only: :show
