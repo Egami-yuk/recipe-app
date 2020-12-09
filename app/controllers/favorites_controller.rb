@@ -1,17 +1,13 @@
 class FavoritesController < ApplicationController
   before_action :set_recipe, only: [:create, :destroy]
   def create
-    if @recipe.user_id != current_user.id 
-      @favorite = Favorite.create(user_id: current_user.id, recipe_id: @recipe.id)
-      redirect_to recipe_path(@recipe.id)
-    end
+    Favorite.create(user_id: current_user.id, recipe_id: @recipe.id)
   end
   
   def destroy
-    @favorite = Favorite.find_by(user_id: current_user.id, recipe_id: @recipe.id)
-    @favorite.destroy
-    redirect_to recipe_path(@recipe.id)
+    Favorite.find_by(user_id: current_user.id, recipe_id: @recipe.id).destroy
   end
+
 
   private
   def set_recipe
