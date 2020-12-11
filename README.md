@@ -18,7 +18,6 @@ https://docs.google.com/spreadsheets/d/1-PIIWCsXr-FctRb8_WmyRW3MQGfRz6ynpJoQrFLW
 # DEMO
 
 ## トップページ
-<img src="recipe-toppage.png">
 
 # 実装予定の機能
 
