@@ -18,9 +18,33 @@ https://docs.google.com/spreadsheets/d/1-PIIWCsXr-FctRb8_WmyRW3MQGfRz6ynpJoQrFLW
 # DEMO
 
 ## トップページ
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/recipe-toppage.png)
+
+トップページに新着レシピ一覧とお気に入り数に応じたランキングを表示
+またトップページからキーワード検索、カテゴリー検索や各ページへ遷移することができる。
+
+## レシピ作成
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/recipe-newpage.png)
+
+レシピ作成する際に投稿する画像プレビュー機能実装しました。
+
+## レシピ詳細
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/recipe-show.png)
+
+レシピの詳細に非同期通信でのお気に入り機能を実装しました、
+
+## ユーザーページ
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/user-page.png)
+
+マイページでは自分が投稿したレシピやお気に入りのレシピを表示しています。
+
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/user-show.png)
+
+自分以外のユーザーページではそのユーザーが投稿したレシピを表示しています。
 
 # 実装予定の機能
-
+## レシピに対するコメント機能
+## お気に入りのユーザーをフォローできる機能
 
 
 
