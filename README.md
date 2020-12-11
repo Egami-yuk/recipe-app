@@ -16,8 +16,9 @@ basic認証
 https://docs.google.com/spreadsheets/d/1-PIIWCsXr-FctRb8_WmyRW3MQGfRz6ynpJoQrFLWkrA/edit#gid=282075926
 
 # DEMO
-## トップページ
 
+## トップページ
+<img src="recipe-toppage.png">
 
 # 実装予定の機能
 
