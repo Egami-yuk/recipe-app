@@ -37,11 +37,13 @@
 .img-upload {
   margin: 0 auto;
 }
+#image-list {
+  height: 300px;
+}
 #image-list > div {
   text-align: center;
 }
 #image-list > div > img{
-  /* max-width: 300px; */
   height: 300px;
 }
 
