@@ -42,13 +42,31 @@ https://docs.google.com/spreadsheets/d/1-PIIWCsXr-FctRb8_WmyRW3MQGfRz6ynpJoQrFLW
 
 自分以外のユーザーページではそのユーザーが投稿したレシピを表示しています。
 
+# 使用技術
+
+### フロントエンド 
+HTML,CSS,JavaScript
+
+### バックエンド
+Ruby,Ruby on rails 
+
+### データベース
+MySQL,SequelPro
+
+### インフラ
+Heroku,AWS(S3)
+
+### ソース管理
+GitHub,GithubDesktop
+
+### エディタ
+VSCode
+
 # 実装予定の機能
-## レシピに対するコメント機能
-## お気に入りのユーザーをフォローできる機能
+#### ・レシピに対するコメント機能
+#### ・お気に入りのユーザーをフォローできる機能
 
-
-
-# README
+# DB設計
 
 ## users テーブル
 
@@ -99,11 +117,7 @@ https://docs.google.com/spreadsheets/d/1-PIIWCsXr-FctRb8_WmyRW3MQGfRz6ynpJoQrFLW
 | ingredient13 | string | null: false |
 | ingredient14 | string | null: false |
 | ingredient15 | string | null: false |
-| ingredient16 | string | null: false |
-| ingredient17 | string | null: false |
-| ingredient18 | string | null: false |
-| ingredient19 | string | null: false |
-| ingredient20 | string | null: false |
+
 
 ### Association
 
