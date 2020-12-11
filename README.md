@@ -18,13 +18,55 @@ https://docs.google.com/spreadsheets/d/1-PIIWCsXr-FctRb8_WmyRW3MQGfRz6ynpJoQrFLW
 # DEMO
 
 ## トップページ
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/recipe-toppage.png)
+
+トップページに新着レシピ一覧とお気に入り数に応じたランキングを表示
+またトップページからキーワード検索、カテゴリー検索や各ページへ遷移することができる。
+
+## レシピ作成
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/recipe-newpage.png)
+
+レシピ作成する際に投稿する画像プレビュー機能実装しました。
+
+## レシピ詳細
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/recipe-show.png)
+
+レシピの詳細に非同期通信でのお気に入り機能を実装しました、
+
+## ユーザーページ
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/user-page.png)
+
+マイページでは自分が投稿したレシピやお気に入りのレシピを表示しています。
+
+![](https://github.com/Egami-yuk/recipe-app/blob/master/readme.img/user-show.png)
+
+自分以外のユーザーページではそのユーザーが投稿したレシピを表示しています。
+
+# 使用技術
+
+### フロントエンド 
+HTML,CSS,JavaScript
+
+### バックエンド
+Ruby,Ruby on rails 
+
+### データベース
+MySQL,SequelPro
+
+### インフラ
+Heroku,AWS(S3)
+
+### ソース管理
+GitHub,GithubDesktop
+
+### エディタ
+VSCode
 
 # 実装予定の機能
+#### ・レシピに対するコメント機能
+#### ・お気に入りのユーザーをフォローできる機能
 
-
-
-
-# README
+# DB設計
 
 ## users テーブル
 
@@ -75,11 +117,7 @@ https://docs.google.com/spreadsheets/d/1-PIIWCsXr-FctRb8_WmyRW3MQGfRz6ynpJoQrFLW
 | ingredient13 | string | null: false |
 | ingredient14 | string | null: false |
 | ingredient15 | string | null: false |
-| ingredient16 | string | null: false |
-| ingredient17 | string | null: false |
-| ingredient18 | string | null: false |
-| ingredient19 | string | null: false |
-| ingredient20 | string | null: false |
+
 
 ### Association
 
